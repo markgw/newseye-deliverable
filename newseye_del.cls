@@ -129,15 +129,15 @@
         \vspace{1.25cm}
         \textsf{\textbf{\huge D\vardnum: \@title}} \\
         \textsf{\textbf{\Large \varsubtit}} \\
-        \vspace{1.25cm}
+        \vfill
         \textsf{Due date of deliverable: M\varduemonth{} (\getdateday{duedate} \monthname[\getdatemonth{duedate}] \getdateyear{duedate})}\\
         \vspace{0.2cm}
         \textsf{Actual submission date: \getdateday{versiondate} \monthname[\getdatemonth{versiondate}] \getdateyear{versiondate}}\\
     \end{center}
 
-    \vspace{0.8cm}
+    \vfill
     \textbf{Start date of project:} 1 May 2018 \hfill \textbf{Duration:} 36 months
-    \vspace{0.25cm}
+    \vfil
 
     Partner organization name in charge of deliverable: \varresp
     \vspace{0.25cm}
