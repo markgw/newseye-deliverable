@@ -81,6 +81,7 @@
 
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
+\setlength{\headheight}{33pt}
 
 
 %%% Variables for title page info
