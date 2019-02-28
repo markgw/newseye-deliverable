@@ -8,10 +8,14 @@
 % Load the KOMA article class
 % Paragraphs are supposed to be separated by "a blank line":
 % KOMA provides this with the full+ option
-\LoadClass[12pt, a4paper, parskip=full-]{scrartcl}
+\LoadClass[10pt, a4paper, parskip=full-]{scrartcl}
 
 
-\RequirePackage[margin=2.5cm,footskip=0.8cm]{geometry} % decreases margins
+\RequirePackage[%
+    lmargin=2.54cm, rmargin=2.54cm, tmargin=2.41cm, bmargin=2.06cm,
+    footskip=0.8cm, includefoot%
+]{geometry} % decreases margins
+% Text width within margins is 15.98cm
 
 \RequirePackage[T1]{fontenc}
 \RequirePackage{lmodern}
@@ -29,6 +33,10 @@
 \RequirePackage{datetime}  % for defining document dates
 \RequirePackage[table]{xcolor}
 \RequirePackage{float}
+
+
+\RequirePackage{makecell}     % Makes it possible to add line breaks to table cells
+\renewcommand{\cellalign}{tl} % Set the default alignment for cells created with \makecell to top left
 
 
 % Use Helvetica: it's an open source font that looks
@@ -81,7 +89,7 @@
 
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
-\setlength{\headheight}{33pt}
+\setlength{\headheight}{1.16cm}
 
 
 %%% Variables for title page info
@@ -114,22 +122,20 @@
     \pagestyle{empty}
     \begin{center}
         \vspace{3.5cm}
-        \begin{tabular}{p{5cm}p{5cm}p{5cm}}
-            \includegraphics{newsEye} &  &\includegraphics{eu} \\
-        \end{tabular}
+        \includegraphics[width=2.6cm]{newsEye}  \hfill \includegraphics[width=2.7cm]{eu}
 
         \vspace{2.2cm}
-        \textsf{\large Project Number: \textbf{770299}}  \\
+        \textsf{Project Number: \textbf{770299}}  \\
         \vspace{1.1cm}
-        \textbf{\Large NewsEye:} \\
+        \textbf{\large NewsEye:} \\
         \vspace{0.3cm}
-        \textbf{\Large A Digital Investigator for Historical Newspapers} \\
+        \textbf{\large A Digital Investigator for Historical Newspapers} \\
         \vspace{1.5cm}
-        \textsf{\large Research and Innovation Action} \\
-        \textsf{\large Call H2020-SC-CULT-COOP-2016-2017} \\
+        \textsf{Research and Innovation Action} \\
+        \textsf{Call H2020-SC-CULT-COOP-2016-2017} \\
         \vspace{1.25cm}
-        \textsf{\textbf{\huge D\vardnum: \@title}} \\
-        \textsf{\textbf{\Large \varsubtit}} \\
+        \textsf{\textbf{\Large D\vardnum: \@title}} \\
+        \textsf{\textbf{\large \varsubtit}} \\
         \vfill
         \textsf{Due date of deliverable: M\varduemonth{} (\getdateday{duedate} \monthname[\getdatemonth{duedate}] \getdateyear{duedate})}\\
         \vspace{0.2cm}
@@ -143,7 +149,9 @@
     Partner organization name in charge of deliverable: \varresp
     \vspace{0.25cm}
 
-    \begin{tabular}{ |l|l|l| }
+    % Actual widths: |p{1.27cm}|p{13.34cm}|p{1.31cm}|
+    % \tabcolsep = 0.21cm, subtracted from each width (0.42, for both sides)
+    \begin{tabular}{ |p{0.85cm}|p{12.92cm}|p{0.89cm}| }
     \hline
     \rowcolor{lightgray}
     \multicolumn{3}{|c|}{\textbf{Project co-funded by the European Commission within Horizon 2020}} \\
@@ -160,9 +168,7 @@
 
 
     \newpage
-
-    \textbf{Revision History}
-
+    \textbf{Revision History}\\[5pt]
     \noindent\begin{tabularx}{\textwidth}{|l|l|l|}
         \hline
         \rowcolor{lightgray} \multicolumn{3}{|l|}{\textbf{Document administrative information}} \\
@@ -203,8 +209,6 @@
             & \ifthenelse{\equal{\varstat}{Submitted}}{x}{} & Submitted\\
         \hline
     \end{tabularx}
-
-    \vspace{0.8cm}
 
   \def\titlepage{}
   \pagestyle{fancy}
