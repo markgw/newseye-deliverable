@@ -149,9 +149,9 @@
     Partner organization name in charge of deliverable: \varresp
     \vspace{0.25cm}
 
-    % Actual widths: |p{1.27cm}|p{13.34cm}|p{1.31cm}|
+    % Actual widths: |p{1.27cm}|p{13.28cm}|p{1.31cm}|
     % \tabcolsep = 0.21cm, subtracted from each width (0.42, for both sides)
-    \begin{tabular}{ |p{0.85cm}|p{12.92cm}|p{0.89cm}| }
+    \begin{tabular}{ |p{0.85cm}|p{12.86cm}|p{0.89cm}| }
     \hline
     \rowcolor{lightgray}
     \multicolumn{3}{|c|}{\textbf{Project co-funded by the European Commission within Horizon 2020}} \\
