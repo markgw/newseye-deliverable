@@ -159,10 +159,15 @@
     \rowcolor{lightgray}
     \multicolumn{3}{|c|}{\textbf{Dissemination Level}} \\
     \hline
-    PU & \footnotesize{Public} & - \\
-    PP & \footnotesize{Restricted to other programme participants (including the Commission Services)} & - \\
-    RE & \footnotesize{Restricted to a group specified by the Consortium (including the Commission Services)} & - \\
-    CO & \footnotesize{Confidential, only for members of the Consortium (including the Commission Services)} & CO \\
+    PU & \footnotesize{Public} &
+        \ifthenelse{\equal{\vardist}{PU}}{PU}{-} \\
+    PP & \footnotesize{Restricted to other programme participants (including the Commission Services)} &
+        \ifthenelse{\equal{\vardist}{PP}}{PP}{-}\\
+    RE & \footnotesize{Restricted to a group specified by the Consortium (including the Commission Services)} &
+        \ifthenelse{\equal{\vardist}{RE}}{RE}{-}\\
+    CO & \footnotesize{Confidential, only for members of the Consortium (including the Commission Services)} &
+        \ifthenelse{\equal{\vardist}{CO}}{CO}{-}\\
+    \hline
     \hline
     \end{tabular}
 
